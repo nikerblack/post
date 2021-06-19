@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Title</title>
+</head>
+<body>
+	<h1>Filter</h1>
+	<form action="#" th:action="@{/publicaciones}" th:object="${publicaciones}" method="post" >
+		<label>Type post ID</label>
+		<input type="text" th:field="*{id}" />
+		<button type="submit">Buscar</button>
+	</form>
+	<h1>All Post</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>UserId</th>
+				<th>Title</th>
+				<th>Body</th>
+				<th>Anual Salary</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="post : ${books}">
+				<td th:text="${post.id}"></td>
+				<td th:text="${post.userId}"></td>
+				<td th:text="${post.title}"></td>
+				<td th:text="${post.body}"></td>
+				<td th:text="${post.body}"></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
